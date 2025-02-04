@@ -103,10 +103,13 @@
           player.on(player.EVENT.SHOW_PRODUCT_VIEW, (event) => {
             console.log("SHOW_PRODUCT_VIEW", event);
             if (isIos) {
+/*
               window.webkit.messageHandlers.bambuserEventHandler.postMessage({
                 eventName: "player.EVENT.SHOW_PRODUCT_VIEW",
                 data: event,
               });
+*/
+window.location.href = "ikea://membership/open";
             } else if (isAndroid) {
               Android.showToast(`Product (id: ${event.sku}) has been clicked!`);
             }
