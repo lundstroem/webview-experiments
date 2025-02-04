@@ -1,0 +1,60 @@
+## Build
+build/
+DerivedData/
+
+# Pods
+Pods/
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+# Ignore user-specific Xcode data
+*.xcuserdatad/
+*.xcuserdata/
+
+*.moved-aside
+*.xccheckout
+
+# Ignore SwiftPM auto-generated workspace data
+Packages/**/.swiftpm/xcode/package.xcworkspace/xcshareddata/
+Packages/**/.swiftpm/xcode/package.xcworkspace/xcuserdata/
+Packages/**/.swiftpm/xcode/xcshareddata/
+Packages/**/.swiftpm/xcode/xcuserdata/
+
+# Track Xcode project shared schemes
+!*.xcodeproj/xcshareddata/xcschemes/*.xcscheme
+
+.build/*
+
+# Merge Tool Diff Files
+*.orig
+
+# Packages
+Packages/IKEAFeatures/Sources/ShopAndGo/Sources/Resources/wifi-config.json
+Packages/BuildTools/.swiftpm/*
+Packages/ApolloCodegen/ApolloCLI
+Packages/*/.build
+Packages/*/Package.resolved
+
+# Resources
+ikeaApp/Resources/Legal/Pods-kompis-acknowledgements.plist
+ikeaApp/Resources/IKEAAnalyticsSettings.plist
+ikeaApp/Resources/Secrets.plist
+ikeaApp/Resources/Secrets.swift
+
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.idea/
+*.vscode/
+
+# MacOS
+.DS_Store
