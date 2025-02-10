@@ -113,12 +113,55 @@
 window.location.href = "ikea://membership/open";
 window.location.href = "https://www.ikea.com/se/sv/p/skogsduva-mjukleksak-lodjur-orange-brun-60578668/";
 */
-window.location.href = "bbview://pip/"+event.sku;
+
+
+            player.requestPictureInPicture();
+
+            window.location.href = "bbview://pip/"+event.sku;
 
             } else if (isAndroid) {
               Android.showToast(`Product (id: ${event.sku}) has been clicked!`);
             }
           });
+
+
+	player.on(player.EVENT.ENTERED_PICTURE_IN_PICTURE, () => {
+            // This callback will be called if the player successfully entered PiP mode
+
+            // At this point it could be a good idea to hide the currently presented WebView which
+            // might be covering the view of the applications navigation stack, depending how the app is built.
+            //
+            // Pseudo code to send an event to the apps native code layer via WKScriptMessageHandler:
+            //
+            //
+            // window.webkit.messageHandlers.WKScriptMessageHandler.postMessage({
+            //     'eventName': 'hide-lvs-webview',
+	
+	    window.location.href = "bbview://enter-pip;
+         });
+
+         To exit PIP
+
+         player.on(player.EVENT.EXITED_PICTURE_IN_PICTURE, () => {
+            // This callback will be called if the player exited PiP mode
+            // The PiP mode will be exited in these cases:
+            // a) player.exitPictureInPicture();
+            // b) User interacts clicks the "Exit picture in picture" icon
+            // in the PiP UI
+            //
+            // At this point it could be a good idea to "unhide" the WebView
+            // which contains the LVS player.
+            //
+            // Pseudo code to send an event to the apps native code layer
+            // via WKScriptMessageHandler:
+            //
+            //
+            // window.webkit.messageHandlers.WKScriptMessageHandler.postMessage({
+            // 'eventName': 'show-lvs-webview',
+            // });
+
+	    window.location.href = "bbview://exit-pip;
+         });
 
           player.on(player.EVENT.SHOW_SHARE, (event, callback) => {
             console.log("SHOW_SHARE", event);
